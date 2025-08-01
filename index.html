@@ -150,7 +150,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: url('./assets/img/background.jpg') no-repeat center center/cover;
             opacity: 0.1;
         }
 
@@ -246,17 +246,19 @@
             margin: 0 auto;
         }
 
+        /* Feature Card Styling */
         .feature-card {
             border: none;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
-            padding: 30px;
+            padding: 2.5rem;
             background-color: white;
             position: relative;
             overflow: hidden;
             z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .feature-card::before {
@@ -267,33 +269,94 @@
             width: 100%;
             height: 5px;
             background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            z-index: 2;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(68, 138, 255, 0.15);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(68, 138, 255, 0.15);
         }
 
         .feature-card:hover::before {
             height: 10px;
         }
 
+        .feature-icon-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+
         .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(68, 138, 255, 0.2);
         }
 
         .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            color: var(--secondary-color);
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 15px 30px rgba(68, 138, 255, 0.3);
+        }
+
+        .feature-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff4757;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+            z-index: 3;
         }
 
         .feature-title {
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-size: 1.4rem;
+        }
+
+        .feature-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .features-section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .feature-icon-wrapper {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+
+            .feature-icon {
+                font-size: 1.5rem;
+            }
         }
 
         /* App Showcase Section */
@@ -375,7 +438,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: url('./assets/img/background.jpg') no-repeat center center/cover;
             opacity: 0.05;
         }
 
@@ -599,77 +662,63 @@
     <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Fitur Unggulan</h2>
-                <p class="section-subtitle">Batik Sesa Bojonegoro dilengkapi dengan berbagai fitur canggih untuk
-                    memudahkan pengelolaan keuangan UMKM batik Anda</p>
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title fw-bold">Fitur Unggulan</h2>
+                <p class="section-subtitle lead text-muted">Solusi lengkap untuk mengelola keuangan bisnis batik Anda
+                    dengan teknologi terkini</p>
             </div>
 
             <div class="row g-4">
+                <!-- Feature 1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-card animate__animated animate__fadeInUp">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-pie"></i>
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="feature-badge">Fitur</div>
                         </div>
-                        <h4 class="feature-title">Analisis Keuangan</h4>
-                        <p>Dapatkan laporan keuangan lengkap dengan grafik visual yang mudah dipahami untuk membantu
-                            pengambilan keputusan bisnis.</p>
+                        <h4 class="feature-title">Penerimaan Real-time</h4>
+                        <p class="feature-description">Catat semua transaksi penerimaan secara real-time dengan
+                            antarmuka yang sederhana dan intuitif.</p>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card animate__animated animate__fadeInUp animate__delay-1s">
-                        <div class="feature-icon">
-                            <i class="fas fa-exchange-alt"></i>
-                        </div>
-                        <h4 class="feature-title">Transaksi Real-time</h4>
-                        <p>Catat semua transaksi masuk dan keluar secara real-time dengan antarmuka yang sederhana dan
-                            intuitif.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card animate__animated animate__fadeInUp animate__delay-2s">
-                        <div class="feature-icon">
-                            <i class="fas fa-bell"></i>
-                        </div>
-                        <h4 class="feature-title">Notifikasi</h4>
-                        <p>Dapatkan pemberitahuan penting tentang tagihan, pembayaran, dan aktivitas keuangan lainnya.
-                        </p>
-                    </div>
-                </div>
-
+                <!-- Feature 2 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-card animate__animated animate__fadeInUp">
-                        <div class="feature-icon">
-                            <i class="fas fa-cloud"></i>
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="feature-badge">Fitur</div>
                         </div>
                         <h4 class="feature-title">Cloud Sync</h4>
-                        <p>Data keuangan tersimpan aman di cloud dan dapat diakses dari berbagai perangkat kapan saja.
-                        </p>
+                        <p class="feature-description">Data keuangan tersimpan aman di cloud dan dapat diakses dari
+                            perangkat mobile kapan saja.</p>
                     </div>
                 </div>
 
+                <!-- Feature 3 -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="feature-card animate__animated animate__fadeInUp animate__delay-1s">
-                        <div class="feature-icon">
-                            <i class="fas fa-file-export"></i>
+                    <div class="feature-card animate__animated animate__fadeInUp">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-export"></i>
+                            </div>
+                            <div class="feature-badge">Fitur</div>
                         </div>
-                        <h4 class="feature-title">Ekspor Laporan</h4>
-                        <p>Ekspor laporan keuangan dalam berbagai format (PDF, Excel) untuk kebutuhan administrasi.</p>
+                        <h4 class="feature-title">Manajemen Gaji</h4>
+                        <p class="feature-description">Kelola penggajian karyawan dengan sistem otomatis dan data
+                            karyawan.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card animate__animated animate__fadeInUp animate__delay-2s">
-                        <div class="feature-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <h4 class="feature-title">Keamanan Data</h4>
-                        <p>Data keuangan Anda dilindungi dengan enkripsi tingkat tinggi dan sistem keamanan berlapis.
-                        </p>
-                    </div>
-                </div>
+            <div class="text-center mt-5">
+                <a href="#download" class="btn btn-primary btn-lg rounded-pill px-4 py-2 shadow-sm">
+                    <i class="fas fa-rocket me-2"></i> Mulai Sekarang
+                </a>
             </div>
         </div>
     </section>
@@ -680,8 +729,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="app-mockup">
-                        <img src="./assets/img/mockup.png"
-                            alt="Batik Sesa App Mockup" class="img-fluid">
+                        <img src="./assets/img/mockup.png" alt="Batik Sesa App Mockup" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -689,18 +737,27 @@
                     <p class="section-subtitle">Dirancang khusus untuk memenuhi kebutuhan pengelolaan keuangan usaha
                         batik dengan antarmuka yang modern dan mudah digunakan.</p>
 
-                    <ul class="app-features-list">
+                    <ul class="app-features-list mt-3">
                         <li>
-                            <h5>Pencatatan Transaksi Mudah</h5>
-                            <p>Catat semua transaksi keuangan dengan cepat melalui antarmuka yang sederhana.</p>
+                            <h5>Dashboard Penerimaan</h5>
+                            <p>Pantau semua pemasukan usaha secara real-time dengan tampilan visual yang informatif,
+                                termasuk penjualan batik dan pesanan custom batik.</p>
                         </li>
                         <li>
-                            <h5>Laporan Bulanan Otomatis</h5>
-                            <p>Dapatkan laporan keuangan bulanan yang dihasilkan secara otomatis oleh sistem.</p>
+                            <h5>Manajemen Daftar Bahan Baku</h5>
+                            <p>Kelola persediaan bahan baku seperti lilin batik, pewarna alam, dan canting dengan sistem stok.</p>
                         </li>
                         <li>
-                            <h5>Multi-Device Support</h5>
-                            <p>Akses data keuangan Anda dari smartphone, tablet, atau komputer.</p>
+                            <h5>Manajemen Daftar Kain</h5>
+                            <p>Catat dan pantau ketersediaan berbagai jenis kain beserta ukuran dan kualitasnya untuk memastikan produksi batik berjalan lancar.</p>
+                        </li>
+                        <li>
+                            <h5>Manajemen Daftar Keperluan</h5>
+                            <p>Organisir semua kebutuhan operasional mulai dari peralatan membatik hingga kebutuhan administrasi dengan sistem pencatatan yang terstruktur.</p>
+                        </li>
+                        <li>
+                            <h5>Manajemen Data Karyawan dan Daftar Gaji</h5>
+                            <p>Simpan data lengkap karyawan dan daftar gaji setiap karyawan dengan struktur sesuai status karyawan.</p>
                         </li>
                     </ul>
                 </div>
@@ -724,11 +781,7 @@
                     <div class="download-badges animate__animated animate__fadeIn animate__delay-3s">
                         <div class="badge-platform">
                             <i class="fab fa-android"></i>
-                            <span>Android</span>
-                        </div>
-                        <div class="badge-platform">
-                            <i class="fab fa-apple"></i>
-                            <span>iOS</span>
+                            <span>Hanya tersedia versi Android</span>
                         </div>
                     </div>
                 </div>

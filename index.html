@@ -306,7 +306,7 @@
 
         .app-mockup {
             position: relative;
-            max-width: 300px;
+            max-width: 500px;
             margin: 0 auto;
             animation: float 6s ease-in-out infinite;
         }
@@ -451,11 +451,13 @@
         }
 
         .footer-logo {
+            font-family: 'Sriwedari';
             font-weight: 700;
             color: white;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
             display: inline-block;
+            text-decoration: none;
         }
 
         .footer-logo span {
@@ -463,74 +465,16 @@
         }
 
         .footer-about {
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-
-        .footer-links h5 {
-            font-weight: 600;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-links h5::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
+            text-align: center;
+            max-width: 500px;
             margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
+            opacity: 0.8;
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 30px;
-            margin-top: 50px;
+            margin-top: 10px;
             text-align: center;
             opacity: 0.7;
             font-size: 0.9rem;
@@ -603,7 +547,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Batik <span>Sesa</span></a>
+            <a class="navbar-brand" href="#">BATIK <span>SESA</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -736,7 +680,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="app-mockup">
-                        <img src="https://via.placeholder.com/300x600/448AFF/FFFFFF?text=Batik+Sesa"
+                        <img src="./assets/img/mockup.png"
                             alt="Batik Sesa App Mockup" class="img-fluid">
                     </div>
                 </div>
@@ -796,21 +740,14 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <a href="#" class="footer-logo">Batik<span>Sesa</span></a>
+                <div class="col-lg-12 d-flex justify-content-center align-items-center flex-column">
+                    <a href="#" class="footer-logo">BATIK <span>SESA</span></a>
                     <p class="footer-about">Aplikasi keuangan digital khusus untuk UMKM batik di Bojonegoro. Membantu
                         pengusaha batik mengelola keuangan dengan lebih mudah dan efisien.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2023 Batik Sesa Bojonegoro. All rights reserved.</p>
+                <p>&copy; 2025 Batik Sesa Bojonegoro. All rights reserved.</p>
             </div>
         </div>
     </footer>

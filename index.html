@@ -248,6 +248,10 @@
 
         /* Feature Card Styling */
         .feature-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             border: none;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -330,6 +334,7 @@
         }
 
         .feature-description {
+            text-align: center;
             color: #7f8c8d;
             line-height: 1.6;
         }
@@ -614,25 +619,36 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-close d-none">×</span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Beranda</a>
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home d-lg-none me-2"></i> Beranda
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Fitur</a>
+                        <a class="nav-link" href="#features">
+                            <i class="fas fa-star d-lg-none me-2"></i> Fitur
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#app">Aplikasi</a>
+                        <a class="nav-link" href="#app">
+                            <i class="fas fa-mobile-screen d-lg-none me-2"></i> Aplikasi
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimoni</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#download">Download</a>
+                        <a class="nav-link" href="#download">
+                            <i class="fas fa-download d-lg-none me-2"></i> Download
+                        </a>
                     </li>
                 </ul>
+                <div class="d-lg-none mt-3">
+                    <a href="#download" class="btn btn-primary w-100 rounded-pill">
+                        <i class="fas fa-download me-2"></i> Download App
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -745,19 +761,23 @@
                         </li>
                         <li>
                             <h5>Manajemen Daftar Bahan Baku</h5>
-                            <p>Kelola persediaan bahan baku seperti lilin batik, pewarna alam, dan canting dengan sistem stok.</p>
+                            <p>Kelola persediaan bahan baku seperti lilin batik, pewarna alam, dan canting dengan sistem
+                                stok.</p>
                         </li>
                         <li>
                             <h5>Manajemen Daftar Kain</h5>
-                            <p>Catat dan pantau ketersediaan berbagai jenis kain beserta ukuran dan kualitasnya untuk memastikan produksi batik berjalan lancar.</p>
+                            <p>Catat dan pantau ketersediaan berbagai jenis kain beserta ukuran dan kualitasnya untuk
+                                memastikan produksi batik berjalan lancar.</p>
                         </li>
                         <li>
                             <h5>Manajemen Daftar Keperluan</h5>
-                            <p>Organisir semua kebutuhan operasional mulai dari peralatan membatik hingga kebutuhan administrasi dengan sistem pencatatan yang terstruktur.</p>
+                            <p>Organisir semua kebutuhan operasional mulai dari peralatan membatik hingga kebutuhan
+                                administrasi dengan sistem pencatatan yang terstruktur.</p>
                         </li>
                         <li>
                             <h5>Manajemen Data Karyawan dan Daftar Gaji</h5>
-                            <p>Simpan data lengkap karyawan dan daftar gaji setiap karyawan dengan struktur sesuai status karyawan.</p>
+                            <p>Simpan data lengkap karyawan dan daftar gaji setiap karyawan dengan struktur sesuai
+                                status karyawan.</p>
                         </li>
                     </ul>
                 </div>

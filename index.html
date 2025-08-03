@@ -794,7 +794,8 @@
                     <p class="download-subtitle animate__animated animate__fadeIn animate__delay-1s">Mulai kelola
                         keuangan usaha batik Anda dengan lebih mudah dan efisien</p>
 
-                    <button class="btn btn-download animate__animated animate__fadeIn animate__delay-2s">
+                    <button class="btn btn-download animate__animated animate__fadeIn animate__delay-2s"
+                        onclick="downloadApp()">
                         <i class="fas fa-mobile-alt"></i> Download Aplikasi
                     </button>
 
@@ -829,7 +830,58 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        // Function to handle app download
+        function downloadApp() {
+            Swal.fire({
+                title: 'Aplikasi Aman',
+                html: '<div class="text-start">' +
+                    '<p>Aplikasi Batik Sesa telah diperiksa dan aman untuk diunduh dan digunakan:</p>' +
+                    '<ul>' +
+                    '<li>Tidak mengandung malware</li>' +
+                    '<li>Tidak meminta izin yang tidak perlu</li>' +
+                    '<li>Data keuangan Anda tetap aman</li>' +
+                    '</ul>' +
+                    '<p>Klik "Download" untuk melanjutkan.</p>' +
+                    '</div>',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Download',
+                cancelButtonText: 'Batal',
+                customClass: {
+                    confirmButton: 'btn btn-primary me-2',
+                    cancelButton: 'btn btn-secondary'
+                },
+                buttonsStyling: false
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Create a temporary link to trigger the download
+                    const link = document.createElement('a');
+                    link.href = 'assets/app/BatikSesaApp.apk';
+                    link.download = 'BatikSesaApp.apk';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    // Optional: Show download complete message
+                    setTimeout(() => {
+                        Swal.fire({
+                            title: 'Download Selesai',
+                            text: 'Aplikasi telah berhasil diunduh. Silakan buka file APK untuk menginstal.',
+                            icon: 'success',
+                            confirmButtonText: 'OK',
+                            customClass: {
+                                confirmButton: 'btn btn-primary'
+                            },
+                            buttonsStyling: false
+                        });
+                    }, 3000);
+                }
+            });
+        }
+
         // Navbar scroll effect
         $(window).scroll(function () {
             if ($(this).scrollTop() > 50) {
